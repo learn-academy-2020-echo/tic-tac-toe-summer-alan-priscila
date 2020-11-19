@@ -8,8 +8,10 @@ class App extends Component{
     this.state = {
       squares: Array(9).fill(null),
       currentPlayer: "🐶"
+      // dogSelectedSquare:squares[index]==="🐶"
     }
   }
+  
 // Create a function that allows alternating emojis to appear on even/odd indexes
 // We need to define the winner of tic tac toe as being indexes that are 
 // 0,1,2, 
@@ -25,30 +27,97 @@ class App extends Component{
 // if one of the conditions where the 8 possible winning outcomes is met, then we can have a set State that brings all indexes or changes the state of all emojis to empty strings (reset button)
 // adding another button to the render to change all of the emojis back to an empty string
 // avoiding clicking on the same box twice
+//if state = dog then make it so state can't be changed to cat vise
 
 handleGamePlay = (index) => {
   const { squares, currentPlayer } = this.state
-  if( currentPlayer === "🐶"){
-  squares[index] = "🐶"
-  this.setState({squares: squares, currentPlayer: "🐱"})
+  // if square = empty, then its possible to play the game, 
+  // if square has any value then it won't run any command
+  if (squares[index] === null ){
+  //if current player is dog then set state to cat
+  // then if current play is cat set state to dog
+    if( currentPlayer === "🐶"){
+      squares[index] = "🐶"
+      this.setState({squares: squares, currentPlayer: "🐱"})
 
-  
- } else {
-   squares[index] = "🐱"
-   this.setState({squares: squares, currentPlayer: "🐶"})
- }
+     } else{
+       squares[index] = "🐱"
+       this.setState({squares: squares, currentPlayer: "🐶"})
+     }
+    }
+// winning cases for dog
+// 0,1,2, 
+// 3,4,5
+// 6,7,8
+// 0,3,6
+// 1,4,7
+// 2,5,8
+// 0,4,8
+// 2,4,6 
+
+winner = (index) => {
+    const { squares } = this.state
+  if (((squares[0] === "🐶") && (squares[1] === "🐶") && (squares[2] === "🐶"))|| 
+    ((squares[3] === "🐶") && (squares[4] === "🐶") && (squares[5] === "🐶")) || 
+    ((squares[6] === "🐶") && (squares[7] === "🐶") && (squares[8] === "🐶")) ||
+    ((squares[0] === "🐶") && (squares[3] === "🐶") && (squares[6] === "🐶")) ||
+    ((squares[1] === "🐶") && (squares[4] === "🐶") && (squares[7] === "🐶")) ||
+    ((squares[2] === "🐶") && (squares[5] === "🐶") && (squares[8] === "🐶")) ||
+    ((squares[0] === "🐶") && (squares[4] === "🐶") && (squares[8] === "🐶")) ||
+    ((squares[2] === "🐶") && (squares[4] === "🐶") && (squares[6] === "🐶")))
+
+  {alert("🐶 is the")}
 }
 
-// handleGamePlay = (index) => {
-//     const { squares, treasureLocation } = this.state
-//   if(index === treasureLocation){
-//     squares[index] = "💎"
-//     this.setState({squares: squares})
-//   } else{
-//     squares[index] = "🌴"
-//    this.setState({squares: squares})
-//    }
-//   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // else if((squares[3] === "🐶") && (squares[4] === "🐶") && (squares[5] === "🐶"))
+  // {alert("🐶 is the")}
+  // else if((squares[6] === "🐶") && (squares[7] === "🐶") && (squares[8] === "🐶"))
+  // {alert("🐶 is the")}
+  // else if((squares[0] === "🐶") && (squares[3] === "🐶") && (squares[6] === "🐶"))
+  // {alert("🐶 is the")}
+  // else if((squares[1] === "🐶") && (squares[4] === "🐶") && (squares[7] === "🐶"))
+  // {alert("🐶 is the")}
+  // else if((squares[2] === "🐶") && (squares[5] === "🐶") && (squares[8] === "🐶"))
+  // {alert("🐶 is the")}
+  // else if((squares[0] === "🐶") && (squares[4] === "🐶") && (squares[8] === "🐶"))
+  // {alert("🐶 is the")}
+  // else if((squares[2] === "🐶") && (squares[4] === "🐶") && (squares[6] === "🐶"))
+  // {alert("🐶 is the")}
+  // else if((squares[0] === "🐱") && (squares[1] === "🐱") && (squares[2] === "🐱"))
+  // {alert("🐱 is the")}
+  // else if((squares[3] === "🐱") && (squares[4] === "🐱") && (squares[5] === "🐱"))
+  // {alert("🐱 is the")}
+  // else if((squares[6] === "🐱") && (squares[7] === "🐱") && (squares[8] === "🐱"))
+  // {alert("🐱 is the")}
+  // else if((squares[0] === "🐱") && (squares[3] === "🐱") && (squares[6] === "🐱"))
+  // {alert("🐱 is the")}
+  // else if((squares[1] === "🐱") && (squares[4] === "🐱") && (squares[7] === "🐱"))
+  // {alert("🐱 is the")}
+  // else if((squares[2] === "🐱") && (squares[5] === "🐱") && (squares[8] === "🐱"))
+  // {alert("🐱 is the")}
+  // else if((squares[0] === "🐱") && (squares[4] === "🐱") && (squares[8] === "🐱"))
+  // {alert("🐱 is the")}
+  // else if((squares[2] === "🐱") && (squares[4] === "🐱") && (squares[6] === "🐱"))
+  // {alert("🐱 is the")}
+   
+}
+  
+
   
   render(){
     return(
