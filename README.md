@@ -25,7 +25,9 @@ This project will challenge your knowledge of React but should also be an exerci
 ![tic-tac-toe board](https://s3.amazonaws.com/learn-site/curriculum/tic-tac-toe-board.png)
 
 - As a user, I should be able to click on a square to mark it.
+<!-- We need to add a method that allows us to add an emoji to a square once we click on it -->
 - As a user, my partner should be able to click on a square after me and see their mark.
+<!--Now me write our if/else statements to all the possible winning outcomes -->
 - As a user, I shouldn't be able to click on a square that has already been selected.
 - As a user, when someone has won the game (3 squares in a row: horizontally, vertically, or diagonally) I should see a notice telling me who won.
 - As a user, I should not be able to continue playing the game after the game has been won.
