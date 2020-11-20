@@ -4,19 +4,27 @@ h1 {
 }
 
 
+h2 {
+  text-align: center;
+}
+
+
+
 #square {
   height: 100px;
   width: 100px;
-  border: 2px solid black;
+  border: 2px solid #85328e;
+  background-color: #3b92c3;
   text-align: center;
   font-size: 5rem;
 }
 
 #gameboard {
   display: flex;
+  border: 2px solid #85328e;
   flex-wrap: wrap;
   flex-direction: row;
-  width: 320px;
+  width: 312px;
   margin: 0 auto;
   margin-bottom: 50px;
 
@@ -25,10 +33,13 @@ h1 {
 #resetbutton {
   height: 30px;
   width: 200px;
-  border: 2px solid purple;
   text-align: center;
   font-size: 25px;
   margin: 0 auto;
   margin-bottom: 50px;
+  background-color: #85328e;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
 
 }

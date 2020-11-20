@@ -72,24 +72,28 @@ handleGamePlay = (index) => {
   }
 }
 
-// resetGame = () => {
-//   const { squares } = this.state
-//   this.setState({ squares: Array(9).fill(null) })
-// }
+//create a function to reset the game when a button is clicked
+resetGame = () => {
+  //destructure squares and gameOver from state
+  const { squares, gameOver } = this.state
+  //set the state of all the squares to null and gameOver to no.
+  this.setState({ squares: Array(9).fill(null), gameOver: "no" })
+}
 
   render(){
     return(
 
       <React.Fragment>
         <h1>Tic Tac Toe</h1>
+        <h2> Current Player = { this.state.currentPlayer } </h2>
         <div id="gameboard">
         { this.state.squares.map((value, index) =>{
             return (
               <Square
-              value ={ value }
-              key={ index }
-              index={ index }
-               handleGamePlay= { this.handleGamePlay }
+                value ={ value }
+                key={ index }
+                index={ index }
+                handleGamePlay= { this.handleGamePlay }
               />
             )
           })
@@ -97,8 +101,10 @@ handleGamePlay = (index) => {
         </div>
 
 
-        <ResetButton />
-    
+        <ResetButton
+          resetGame= { this.resetGame }
+          />
+
 
 
 
