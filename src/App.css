@@ -5,18 +5,30 @@ h1 {
 
 
 #square {
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
   border: 2px solid black;
   text-align: center;
-  font-size: 10rem;
+  font-size: 5rem;
 }
 
 #gameboard {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  width: 620px;
+  width: 320px;
   margin: 0 auto;
+  margin-bottom: 50px;
+
+}
+
+#resetbutton {
+  height: 30px;
+  width: 200px;
+  border: 2px solid purple;
+  text-align: center;
+  font-size: 25px;
+  margin: 0 auto;
+  margin-bottom: 50px;
 
 }
